@@ -1,8 +1,8 @@
 # dsh plugin upgrade tasks (benchmark v2.4 · Harbor format)
 
-The 30 plugin-upgrade tasks measure one thing: **once an AI has our upgrade skill
+The 43 plugin-upgrade tasks measure one thing: **once an AI has our upgrade skill
 installed, will it actually upgrade the plugin**. The first 14 are written exams (read
-the code, produce the answer); the last 16 are hands-on (actually install dsh and run
+the code, produce the answer); the last 29 are hands-on (actually install dsh and run
 the plugin — whether it is alive is obvious at a glance). Every task ships with
 auto-grading, so no human marking is involved.
 
@@ -48,6 +48,19 @@ honestly instead of quietly fixing it and pretending nothing happened).
 | M3-session-projection | Hands-on | A self-assembled profile mounts dsh-tool-todo without the sessionProjections service: does it fix the composition (never edit shipped packages) so the tree activates while the todo tool survives in the final composition |
 | M4-peer-prerelease-range | Hands-on | A peer lower bound written as ^0.1.0-rc.8 does not match 0.1.2-alpha.2 under npm semver's prerelease rule: does it rewrite the bound to the target cohort instead of widening it into a meaningless range |
 | H7-locale-trap | Hands-on | A web plugin anchors host UI by display text, which breaks silently once the host copy is localized: does it switch to a stable data-slot anchor and assert the injection actually rendered |
+| M6-sleep-tool | Hands-on | The smallest real adaptation: bare cordis is no longer the host contract, ContentBlock moved to dsh-llm, peer floors are on a dead cohort (a contract-level break the boot does not reveal) - does it rewrite the cohort contract from the cards instead of trusting the in-source memo |
+| M7-d399-overlay | Hands-on | A browser overlay whose inject list names the deleted dsh-client-runtime: does it recompose the client plane and retype ctx.sessions.list through the api-session-controller ISessions contract |
+| M8-brand-text | Hands-on | The snapshot-store engine moved to dsh-client-store, the cordis peer still carries a -rc prerelease suffix, and the fixture ships stale registration assertions: does it fix both and attribute the pre-existing red test honestly |
+| M9-mcpanel | Hands-on | The client inject list names the removed dsh-client-runtime (boot-fatal) and the peers still carry bare cordis: does it recompose the client plane and declare the locale namespace the alpha way |
+| M10-tools-tree | Hands-on | The ctx.slots service moved to ui-renderer in the client-runtime split: does it add the type-only renderer/settings merges and rehome the inject list instead of trusting the cosmetic-import memo |
+| M11-sidebar-spur | Hands-on | ClientContext lived in the deleted client-runtime: does it move to the cordis Context + ui-renderer slots merge, rework the inject list, and keep the dock registration |
+| M12-interpreters-card | Hands-on | The store engine moved to dsh-client-store and dsh-settings renamed Settings to SettingsProvider: does it re-home both type surfaces, the client inject list, and the peer cohort |
+| H14-mineru-api | Hands-on | A tool plugin serves its settings page through a dedicated /mineru-api RPC channel: apiproxy is deleted, rpc.handle lost its third authority argument, and the client inject list names the removed runtime - migrate both planes and prove the boot-roster entry |
+| H15-locale-pack | Hands-on | A 19-language override layer built on a LocaleRuntime lookup monkey-patch: does it migrate to the native third-language API (addLanguage + register(ns, locale, dict)) and delete the patch, the settings row, and localStorage - instead of the belt-and-braces bait |
+| H16-history-dock | Hands-on | The composer became a Lexical contenteditable: does it switch to a capture-phase document keydown inside the session-scoped dock, collect history through useChat legacy nodes, and yield to data-trigger-menu - instead of the textarea bait |
+| H17-merge-calls | Hands-on | ui-tool deleted its resultView/callView derivations and ui-chat owns the chat nodes: does it derive cards from block.meta + call args + result text, read through useChat, and relax override dicts to Partial - instead of the renamed-fields bait |
+| H18-blame-bubbles | Hands-on | The suggestion-bubbles plugin rides the deleted apiproxy facade with a three-argument rpc.handle and an undeclared projection cell: does it migrate to ConnectionRpcResult, the two-argument handle, and the SessionProjectionStateMap dual-table declaration |
+| H19-workspace-ya | Hands-on | The workspace browser must take over the disabled official ui-workspace through slots.provideRoot plus a stand-in service (the boot-deadlock fix): does it compose the takeover instead of patching the shipped package in node_modules |
 | H20-session-events-ledger | Hands-on | alpha.4 removes the `Session.events` getter (implicit whole-event-array access): does the agent migrate a plugin-internal event ledger module to the explicit sequence/window surface — visible window keeps fork-inherited history, exact-seq lookup, half-open window bounds, own/inherited cut — instead of a symbol rename, an invented getEvents, or a runtime patch |
 
 ## Benchmark results
@@ -201,7 +214,7 @@ harbor run -p benchmark/tasks/S1-static-scan -a oracle
 # evaluate a single task with an agent
 harbor run -p benchmark/tasks/M1-host-migration -a claude-code -m anthropic/claude-opus-4-1
 
-# all 30 tasks: pointing -p at the tasks/ directory runs them as a dataset batch
+# all 43 tasks: pointing -p at the tasks/ directory runs them as a dataset batch
 harbor run -p benchmark/tasks -a claude-code -m anthropic/claude-opus-4-1
 ```
 
@@ -213,7 +226,7 @@ the judge's per-item reasons are in the verifier log.
 
 ### Unattended authorization
 
-All 30 `instruction.md` files carry the `BENCHMARK-AUTH-v1` marker: the task prompt
+All 43 `instruction.md` files carry the `BENCHMARK-AUTH-v1` marker: the task prompt
 itself is the user's confirmation of the plan and the execution within the stated
 scope. The agent should complete the necessary analysis/planning and then proceed — it
 must not stop just because Harbor will not send a second round of "confirmation". The
@@ -356,7 +369,7 @@ numbers cannot be compared across models or against later runs.
   adding ordinary fixture tasks** — the point is to stop anyone from accidentally
   publishing fake plugins to npm.
 - When adding a task, scaffold it with `harbor task init`, then fill in
-  judge / solve.sh following the layout of the existing 30 tasks, and verify the
+  judge / solve.sh following the layout of the existing 43 tasks, and verify the
   reference answer scores 1.0 with `harbor run -p <task> -a oracle`.
 - After adding or modifying prompts, run
   `node benchmark/scripts/validate-execution-contract.mjs` to make sure the

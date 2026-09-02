@@ -39,6 +39,11 @@ Key semantics the fixture forces the agent to get right:
 ## First-party provenance
 
 - Repository: `deepseek-ai/deepseek-harness`
+- Migration card: `DSH-0.1.2-A4-03 · `Session.events` is removed; read the log
+  through `seq` / `eventAt()` / `snapshotEvents()` / `ownEvents()`
+  (`skills/plugin-upgrade/references/v0.1.2-alpha.4.md`) — the community
+  corridor card for exactly this edge; the solution above is its executable
+  form and matches the card's source-derived ledger recipe.
 - `dsh-v0.1.2-alpha.3` = `dd6322d604e00eec1ba5e0c8541159906a21094a`
 - `dsh-v0.1.2-alpha.4` = `4e84901e6471b79ec0338099867ebb4606d12bb5`
 - `packages/core/session/src/index.ts` (the plugin-facing `Session` class; the
