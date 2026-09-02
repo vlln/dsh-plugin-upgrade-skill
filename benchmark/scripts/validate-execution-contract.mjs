@@ -41,6 +41,7 @@ const expectedModes = new Map([
   ['M3-session-projection', 'mutable'],
   ['M4-peer-prerelease-range', 'mutable'],
   ['H7-locale-trap', 'mutable'],
+  ['H20-session-events-ledger', 'mutable'],
 ])
 
 const compact = (text) => text.replaceAll('\r\n', '\n').replace(/\s+/g, ' ')
